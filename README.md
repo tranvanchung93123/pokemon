@@ -1,8 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokémon SSR Application
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) to explore Pokémon data with Server-Side Rendering (SSR). The app fetches Pokémon details from the **PokeAPI** and displays them, including their images, types, and allows pagination.
 
-First, run the development server:
+## Features
+
+Server-Side Rendering (SSR) for optimal performance and SEO.
+Type Filtering: Filter Pokémon by multiple types (e.g., Normal, Fighting).
+Pagination: Navigate through Pokémon results with pagination.
+Pokémon Data fetched dynamically from the PokeAPI.
+
+## Technologies Used
+
+- **Next.js**: Frontend framework for server-side rendering (SSR).
+- **React**: JavaScript library for building the user interface.
+- **TypeScript**: Static type checking for safer and more maintainable code.
+- **PokeAPI**: Public API to fetch Pokémon data.
+
+## Directory Structure
+
+/src
+  ├── /app
+  │     └── pokemon-ssr
+  │           ├── components
+  │           │     └── PokemonSSR.tsx  # Main page component.
+  │           └── page.tsx             # Main page component with SSR logic.
+  ├── /services
+  │     ├── getPokemons.ts         # Service to fetch all Pokémon data.
+  │     ├── getPokemonsByType.ts   # Service to fetch Pokémon data by type.
+  │     └── getPokemonTypes.ts     # Service to fetch Pokémon types.
+  └── /constants
+        └── endpoints.ts           # Stores API endpoints.
+
+
+## Setup and Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Chung-Lee/Pokemon-SSR-App.git
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +58,12 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open http://localhost:3000/pokemon-ssr in your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app uses the following API endpoints:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- PokeAPI: https://pokeapi.co/docs/v2.html
